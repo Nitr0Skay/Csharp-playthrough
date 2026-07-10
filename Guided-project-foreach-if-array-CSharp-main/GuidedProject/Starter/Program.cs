@@ -41,6 +41,8 @@ decimal andrewScore;
 decimal emmaScore;
 decimal loganScore;
 
+int[][] gradeBook = [ sophiaGrades, andrewGrades, emmaGrades, loganGrades ];
+
 sophiaSum = sophia1 + sophia2 + sophia3 + sophia4 + sophia5;
 andrewSum = andrew1 + andrew2 + andrew3 + andrew4 + andrew5;
 emmaSum = emma1 + emma2 + emma3 + emma4 + emma5;
