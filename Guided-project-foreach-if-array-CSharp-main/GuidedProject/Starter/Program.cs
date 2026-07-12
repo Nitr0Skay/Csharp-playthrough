@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 // initialize variables - graded assignments 
 int currentAssignments = 5;
@@ -49,6 +50,35 @@ int[][] gradeBook = [ sophiaGrades, andrewGrades, emmaGrades, loganGrades ];
 // andrewSum = andrew1 + andrew2 + andrew3 + andrew4 + andrew5;
 // emmaSum = emma1 + emma2 + emma3 + emma4 + emma5;
 // loganSum = logan1 + logan2 + logan3 + logan4 + logan5;
+
+foreach(string student in students)
+{
+    if (student == "Sophia")
+    {
+        foreach(int grade in gradeBook[0])
+        {
+            sophiaSum += grade;
+        }
+    } else if(student == "Andrew")
+    {
+        foreach(int grade in gradeBook[1])
+        {
+            sophiaSum += grade;
+        }
+    } else if(student == "Emma")
+    {
+        foreach(int grade in gradeBook[2])
+        {
+            sophiaSum += grade;
+        }
+    } else
+    {
+        foreach(int grade in gradeBook[3])
+        {
+            sophiaSum += grade;
+        }
+    }
+}
 
 sophiaScore = (decimal)sophiaSum / currentAssignments;
 andrewScore = (decimal)andrewSum / currentAssignments;
