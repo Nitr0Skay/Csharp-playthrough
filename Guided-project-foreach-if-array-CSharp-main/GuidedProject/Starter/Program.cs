@@ -43,7 +43,7 @@ decimal emmaScore;
 decimal loganScore;
 
 
-string[] students = [ "Sophia", "Andrew", "Emma", "Logan" ];
+string[] studentNames = [ "Sophia", "Andrew", "Emma", "Logan" ];
 int[][] gradeBook = [ sophiaGrades, andrewGrades, emmaGrades, loganGrades ];
 decimal[] studentScore = [ 0, 0, 0, 0 ];
 
@@ -51,9 +51,9 @@ decimal[] studentScore = [ 0, 0, 0, 0 ];
 // andrewSum = andrew1 + andrew2 + andrew3 + andrew4 + andrew5;
 // emmaSum = emma1 + emma2 + emma3 + emma4 + emma5;
 // loganSum = logan1 + logan2 + logan3 + logan4 + logan5;
-
+int iterator = 0;
 Console.WriteLine("Student\t\tGrade\n");
-foreach(string student in students)
+foreach(string student in studentNames)
 {
     if (student == "Sophia")
     {
@@ -76,16 +76,18 @@ foreach(string student in students)
             emmaSum += grade;
         }
         studentScore[2] = (decimal)emmaSum / currentAssignments;
-    } else
+    } else if(student == "Logan")
     {
         foreach(int grade in gradeBook[3])
         {
             loganSum += grade;
         }
 
-        studentScore[2] = (decimal)loganSum / currentAssignments;
+        studentScore[3] = (decimal)loganSum / currentAssignments;
     }
-    Console.WriteLine($"{student}\t\t");
+    
+    Console.WriteLine($"{student}:\t\t{studentScore[iterator]}");
+    iterator++;
 }
 
 // sophiaScore = (decimal)sophiaSum / currentAssignments;
