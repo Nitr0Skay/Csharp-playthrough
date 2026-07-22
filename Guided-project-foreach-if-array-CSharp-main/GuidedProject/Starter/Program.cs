@@ -4,33 +4,33 @@ using System.Runtime.InteropServices;
 // initialize variables - graded assignments 
 int currentAssignments = 5;
 
-// int sophia1 = 90;
-// int sophia2 = 86;
-// int sophia3 = 87;
-// int sophia4 = 98;
-// int sophia5 = 100;
-int[] sophiaGrades = [ 90, 86, 87, 98, 100 ];
+int sophia1 = 90;
+int sophia2 = 86;
+int sophia3 = 87;
+int sophia4 = 98;
+int sophia5 = 100;
+int[] sophiaGrades = [ sophia1, sophia2, sophia3, sophia4, sophia5 ];
 
-// int andrew1 = 92;
-// int andrew2 = 89;
-// int andrew3 = 81;
-// int andrew4 = 96;
-// int andrew5 = 90;
-int[] andrewGrades = [ 92, 89, 81, 96, 90 ];
+int andrew1 = 92;
+int andrew2 = 89;
+int andrew3 = 81;
+int andrew4 = 96;
+int andrew5 = 90;
+int[] andrewGrades = [ andrew1, andrew2, andrew3, andrew4, andrew5 ];
 
-// int emma1 = 90;
-// int emma2 = 85;
-// int emma3 = 87;
-// int emma4 = 98;
-// int emma5 = 68;
-int[] emmaGrades = [ 90, 85, 87, 98, 68 ];
+int emma1 = 90;
+int emma2 = 85;
+int emma3 = 87;
+int emma4 = 98;
+int emma5 = 68;
+int[] emmaGrades = [ emma1, emma2, emma3, emma4, emma5 ];
 
-// int logan1 = 90;
-// int logan2 = 95;
-// int logan3 = 87;
-// int logan4 = 88;
-// int logan5 = 96;
-int[] loganGrades = [ 90, 95, 87, 88, 96 ];
+int logan1 = 90;
+int logan2 = 95;
+int logan3 = 87;
+int logan4 = 88;
+int logan5 = 96;
+int[] loganGrades = [ logan1, logan2, logan3, logan4, logan5 ];
 
 int sophiaSum = 0;
 int andrewSum = 0;
@@ -45,7 +45,7 @@ decimal loganScore;
 
 string[] studentNames = [ "Sophia", "Andrew", "Emma", "Logan" ];
 int[][] gradeBook = [ sophiaGrades, andrewGrades, emmaGrades, loganGrades ];
-decimal[] studentScore = [ 0, 0, 0, 0 ];
+decimal[] studentScore = new decimal[studentNames.Length];
 
 // sophiaSum = sophia1 + sophia2 + sophia3 + sophia4 + sophia5;
 // andrewSum = andrew1 + andrew2 + andrew3 + andrew4 + andrew5;
@@ -61,21 +61,24 @@ foreach(string student in studentNames)
         {
             sophiaSum += grade;
         }
-        studentScore[0] = (decimal)sophiaSum / currentAssignments;
+        sophiaScore = (decimal)sophiaSum / currentAssignments;
+        studentScore[0] = sophiaScore;
     } else if(student == "Andrew")
     {
         foreach(int grade in gradeBook[1])
         {
             andrewSum += grade;
         }
-        studentScore[1] = (decimal)andrewSum / currentAssignments;
+        andrewScore = (decimal)andrewSum / currentAssignments;
+        studentScore[1] = andrewScore;
     } else if(student == "Emma")
     {
         foreach(int grade in gradeBook[2])
         {
             emmaSum += grade;
         }
-        studentScore[2] = (decimal)emmaSum / currentAssignments;
+        emmaScore = (decimal)emmaSum / currentAssignments;
+        studentScore[2] = emmaScore;
     } else if(student == "Logan")
     {
         foreach(int grade in gradeBook[3])
@@ -83,7 +86,8 @@ foreach(string student in studentNames)
             loganSum += grade;
         }
 
-        studentScore[3] = (decimal)loganSum / currentAssignments;
+        loganScore = (decimal)loganSum / currentAssignments;
+        studentScore[3] = loganScore;
     }
     
     Console.WriteLine($"{student}:\t\t{studentScore[iterator]}");
