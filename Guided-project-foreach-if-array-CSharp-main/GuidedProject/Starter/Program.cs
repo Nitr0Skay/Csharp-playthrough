@@ -57,37 +57,37 @@ foreach(string student in studentNames)
 {
     if (student == "Sophia")
     {
-        foreach(int grade in gradeBook[0])
+        foreach(int grade in gradeBook[iterator])
         {
             sophiaSum += grade;
         }
         sophiaScore = (decimal)sophiaSum / currentAssignments;
-        studentScore[0] = sophiaScore;
+        studentScore[iterator] = sophiaScore;
     } else if(student == "Andrew")
     {
-        foreach(int grade in gradeBook[1])
+        foreach(int grade in gradeBook[iterator])
         {
             andrewSum += grade;
         }
         andrewScore = (decimal)andrewSum / currentAssignments;
-        studentScore[1] = andrewScore;
+        studentScore[iterator] = andrewScore;
     } else if(student == "Emma")
     {
-        foreach(int grade in gradeBook[2])
+        foreach(int grade in gradeBook[iterator])
         {
             emmaSum += grade;
         }
         emmaScore = (decimal)emmaSum / currentAssignments;
-        studentScore[2] = emmaScore;
+        studentScore[iterator] = emmaScore;
     } else if(student == "Logan")
     {
-        foreach(int grade in gradeBook[3])
+        foreach(int grade in gradeBook[iterator])
         {
             loganSum += grade;
         }
 
         loganScore = (decimal)loganSum / currentAssignments;
-        studentScore[3] = loganScore;
+        studentScore[iterator] = loganScore;
     }
     
     Console.WriteLine($"{student}:\t\t{studentScore[iterator]}");
