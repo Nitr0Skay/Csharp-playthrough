@@ -46,6 +46,7 @@ decimal loganScore;
 string[] studentNames = [ "Sophia", "Andrew", "Emma", "Logan" ];
 int[][] gradeBook = [ sophiaGrades, andrewGrades, emmaGrades, loganGrades ];
 decimal[] studentScore = new decimal[studentNames.Length];
+string currentStudentLetterGrade = "";
 
 // sophiaSum = sophia1 + sophia2 + sophia3 + sophia4 + sophia5;
 // andrewSum = andrew1 + andrew2 + andrew3 + andrew4 + andrew5;
@@ -89,8 +90,49 @@ foreach(string student in studentNames)
         loganScore = (decimal)loganSum / currentAssignments;
         studentScore[iterator] = loganScore;
     }
+
+    decimal currentStudentGrade = studentScore[iterator];
+    if(currentStudentGrade >= 97)
+    {
+        currentStudentLetterGrade = "A+";
+    } else if(currentStudentGrade >= 93)
+    {
+        currentStudentLetterGrade = "A";
+    } else if(currentStudentGrade >= 90)
+    {
+        currentStudentLetterGrade = "A-";
+    } else if(currentStudentGrade >= 87)
+    {
+        currentStudentLetterGrade = "B+";
+    } else if(currentStudentGrade >= 83)
+    {
+        currentStudentLetterGrade = "B";
+    } else if(currentStudentGrade >= 80)
+    {
+        currentStudentLetterGrade = "B-";
+    } else if(currentStudentGrade >= 77)
+    {
+        currentStudentLetterGrade = "C+";
+    } else if(currentStudentGrade >= 73)
+    {
+        currentStudentLetterGrade = "C";
+    } else if(currentStudentGrade >= 70)
+    {
+        currentStudentLetterGrade = "C-";
+    } else if(currentStudentGrade >= 67)
+    {
+        currentStudentLetterGrade = "D+";
+    } else if(currentStudentGrade >= 63)
+    {
+        currentStudentLetterGrade = "D";
+    } else if(currentStudentGrade >= 60)
+    {
+        currentStudentLetterGrade = "D-";
+    } else {
+        currentStudentLetterGrade = "F";
+    }
     
-    Console.WriteLine($"{student}:\t\t{studentScore[iterator]}");
+    Console.WriteLine($"{student}:\t\t{currentStudentGrade}\t{currentStudentLetterGrade}");
     iterator++;
 }
 
