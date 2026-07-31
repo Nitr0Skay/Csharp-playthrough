@@ -44,7 +44,7 @@ The outer foreach loop is used to:
 - write the score report information
 */
 foreach (string currentStudentName in studentNames)
-
+{
     if (currentStudentName == "Sophia")
         studentScores = sophiaScores;
 
@@ -122,7 +122,7 @@ foreach (string currentStudentName in studentNames)
     // Student         Grade
     // Sophia:         92.2    A-
     
-    Console.WriteLine($"{currentStudent}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}");
+    Console.WriteLine($"{currentStudentName}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}");
 }
 
 // required for running in VS Code (keeps the Output windows open to view results)
