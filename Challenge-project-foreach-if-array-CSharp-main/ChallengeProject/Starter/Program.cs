@@ -43,20 +43,18 @@ The outer foreach loop is used to:
 - calculate numeric and letter grade
 - write the score report information
 */
-foreach (string name in studentNames)
-{
-    string currentStudent = name;
+foreach (string currentStudentName in studentNames)
 
-    if (currentStudent == "Sophia")
+    if (currentStudentName == "Sophia")
         studentScores = sophiaScores;
 
-    else if (currentStudent == "Andrew")
+    else if (currentStudentName == "Andrew")
         studentScores = andrewScores;
 
-    else if (currentStudent == "Emma")
+    else if (currentStudentName == "Emma")
         studentScores = emmaScores;
 
-    else if (currentStudent == "Logan")
+    else if (currentStudentName == "Logan")
         studentScores = loganScores;
 
     int sumAssignmentScores = 0;
