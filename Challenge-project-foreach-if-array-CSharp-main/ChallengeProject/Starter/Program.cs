@@ -58,14 +58,14 @@ foreach (string currentStudentName in studentNames)
         studentScores = loganScores;
 
     int sumAssignmentScores = 0;
+    int gradedAssignments = 0;
+    int sumCurrentStudentExamScores = 0;
+    int currentStudentExtraCredits = 0;
+
 
     decimal currentStudentGrade = 0;
-
-    int gradedAssignments = 0;
-
     decimal currentStudentExamScore = 0;
-
-    int sumCurrentStudentExamScores = 0;
+    decimal currentStudentExtraPoints = 0;
 
     /* 
     the inner foreach loop sums assignment scores
@@ -131,7 +131,7 @@ foreach (string currentStudentName in studentNames)
     // Student         Grade
     // Sophia:         92.2    A-
     
-    Console.WriteLine($"{currentStudentName}\t\t{currentStudentExamScore}\t\t{currentStudentGrade}\t\t{currentStudentLetterGrade}\t\t{gradedAssignments} ({gradedAssignments} pts)");
+    Console.WriteLine($"{currentStudentName}\t\t{currentStudentExamScore}\t\t{currentStudentGrade}\t\t{currentStudentLetterGrade}\t\t{currentStudentExtraCredits} ({currentStudentExtraPoints} pts)");
 }
 
 // required for running in VS Code (keeps the Output windows open to view results)
