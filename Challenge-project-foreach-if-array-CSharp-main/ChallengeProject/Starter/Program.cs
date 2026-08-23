@@ -59,13 +59,13 @@ foreach (string currentStudentName in studentNames)
 
     int sumAssignmentScores = 0;
     int gradedAssignments = 0;
-    int sumCurrentStudentExamScores = 0;
     int currentStudentExtraCredits = 0;
 
 
     decimal currentStudentGrade = 0;
     decimal currentStudentExamScore = 0;
     decimal currentStudentExtraPoints = 0;
+    decimal sumCurrentStudentExamExtraScores = 0;
 
     /* 
     the inner foreach loop sums assignment scores
@@ -73,21 +73,23 @@ foreach (string currentStudentName in studentNames)
     */
     foreach (int score in studentScores)
     {
-
-        if(gradedAssignments < 5)
-            sumCurrentStudentExamScores += score;
-
         gradedAssignments += 1;
 
         if (gradedAssignments <= examAssignments)
             sumAssignmentScores += score;
 
         else
-            sumAssignmentScores += score / 10;
+        {
+            currentStudentExtraCredits += score;
+            sumCurrentStudentExamExtraScores += ((decimal)score / (decimal)10);
+        }
     }
 
     currentStudentGrade = (decimal)(sumAssignmentScores) / examAssignments;
-    currentStudentExamScore = (decimal)(sumCurrentStudentExamScores) / examAssignments;
+    currentStudentExamScore = currentStudentGrade;
+    currentStudentExtraCredits /= (studentScores.Length - examAssignments);
+    currentStudentExtraPoints = sumCurrentStudentExamExtraScores / examAssignments;
+    currentStudentGrade += currentStudentExtraPoints;
 
     if (currentStudentGrade >= 97)
         currentStudentLetterGrade = "A+";
